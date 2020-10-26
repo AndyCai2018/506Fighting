@@ -11,11 +11,11 @@ int main()
 	string s;
 
 	vector<int> input(n, 0);
-	//Ô¤ÏÈ²»ÊäÈëÊı¾İµÄ×éÊı
+	//é¢„å…ˆä¸è¾“å…¥æ•°æ®çš„ç»„æ•°
 	while (cin >> a >> b) {
 		cout << a + b << endl;
 	}
-	//Ô¤ÏÈÖªµÀÊı¾İ×éÊı
+	//é¢„å…ˆçŸ¥é“æ•°æ®ç»„æ•°
 	cin >> n;
 	for (int i = 0; i<n; i++) {
 		int a, b;
@@ -24,47 +24,47 @@ int main()
 	}
 
 
-//Êı×é
+//æ•°ç»„
 	int m, n;
-	//cout << "ÇëÊäÈëĞĞºÍÁĞ£º";
+	//cout << "è¯·è¾“å…¥è¡Œå’Œåˆ—ï¼š";
 	cin >> m >> n;
-	//¶¯Ì¬¿ª±Ù¿Õ¼ä  
-	int **p = new int*[m]; //¿ª±ÙĞĞ  
+	//åŠ¨æ€å¼€è¾Ÿç©ºé—´  
+	int **p = new int*[m]; //å¼€è¾Ÿè¡Œ  
 	for (int i = 0; i < m; i++)
-		p[i] = new int[n]; //¿ª±ÙÁĞ  
+		p[i] = new int[n]; //å¼€è¾Ÿåˆ—  
 
-						   //cout << "ÇëÊäÈëÊı¾İ£º";
+						   //cout << "è¯·è¾“å…¥æ•°æ®ï¼š";
 	for (int i = 0; i < m; i++)
 		for (int j = 0; j < n; j++)
 			cin >> p[i][j];
 
-	//cout << "Êä³öÊı¾İ£º" << endl;
+	//cout << "è¾“å‡ºæ•°æ®ï¼š" << endl;
 	for (int i = 0; i < m; i++)
 	{
 		for (int j = 0; j < n; j++)
 			cout << p[i][j];
 		cout << endl;
 	}
-	//ÊÍ·Å¿ª±ÙµÄ×ÊÔ´  
+	//é‡Šæ”¾å¼€è¾Ÿçš„èµ„æº  
 	for (int i = 0; i < m; i++)
 		delete[] p[i];
 	delete[] p;
 
 	int m, n;
-	//cout << "ÇëÊäÈëĞĞºÍÁĞ£º";
+	//cout << "è¯·è¾“å…¥è¡Œå’Œåˆ—ï¼š";
 	cin >> m >> n;
 
 
 //STL
-	//×¢ÒâÏÂÃæÕâÒ»ĞĞ£ºvector <intºóÁ½¸ö "> "Ö®¼äÒªÓĞ¿Õ¸ñ£¡·ñÔò»á±»ÈÏÎªÊÇÖØÔØ "> > "¡£   
+	//æ³¨æ„ä¸‹é¢è¿™ä¸€è¡Œï¼švector <intåä¸¤ä¸ª "> "ä¹‹é—´è¦æœ‰ç©ºæ ¼ï¼å¦åˆ™ä¼šè¢«è®¤ä¸ºæ˜¯é‡è½½ "> > "ã€‚   
 	vector<vector<int> > p(m, vector<int>(n));
 
-	//cout << "ÇëÊäÈëÊı¾İ£º";
+	//cout << "è¯·è¾“å…¥æ•°æ®ï¼š";
 	for (int i = 0; i < m; i++)
 		for (int j = 0; j < n; j++)
 			cin >> p[i][j];
 
-	//cout << "Êä³öÊı¾İ£º" << endl;
+	//cout << "è¾“å‡ºæ•°æ®ï¼š" << endl;
 	for (int i = 0; i < m; i++)
 	{
 		for (int j = 0; j < n; j++)
@@ -73,7 +73,7 @@ int main()
 	}
 
 
-//ÓÃ»Ø³µÖÕÖ¹ÊäÈë
+//ç”¨å›è½¦ç»ˆæ­¢è¾“å…¥
 		vector<int> numbers;
 		while (cin>>temp)
 		{
@@ -81,18 +81,36 @@ int main()
 			cin >> temp;
 			// scanf("%d", &temp);
 			numbers.push_back(temp);
-			char s = cin.get(); //sÓÃÀ´½ÓÊÕÊÇ·ñÊÇ»Ø³µ
-								// s = getchar(); //sÓÃÀ´½ÓÊÕÊÇ·ñÊÇ»Ø³µ
+			char s = cin.get(); //sç”¨æ¥æ¥æ”¶æ˜¯å¦æ˜¯å›è½¦
+								// s = getchar(); //sç”¨æ¥æ¥æ”¶æ˜¯å¦æ˜¯å›è½¦
 			if (s == '\n')
 			{
 				break;
 			}
 		}
 
+		/*
 		for (int i = 0; i < numbers.size(); i++)
 		{
 			cout << numbers[i] << " ";
 		}
+		*/
+		for (auto r : numbers)   //å®¹å™¨éå† foreach åº•å±‚æ˜¯è¿­ä»£å™¨ ï¼Œå¯ä»¥é¿å…ä¸‹æ ‡ç´¢å¼•é”™è¯¯
+			cout << r << " ";
+
+		//ä½¿ç”¨getlineæŒ‰è¡Œè¯»å–
+		vector<int>intVec;
+		string str;
+		while (getline(cin, str))
+		{
+			int temp = 0;
+			istringstream ss(line);
+			while (ss >> temp)
+			{
+				intVec.push_back(temp);
+			}
+		}
+		
 
 		
 }
